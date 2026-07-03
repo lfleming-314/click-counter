@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cosmic Click Counter</title>
+  <title>Cosmic Creations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -17,39 +17,31 @@
 
   <main class="container">
     <header class="header">
-      <p class="subtitle">// MISSION CONTROL</p>
-      <h1>Cosmic Click Counter</h1>
+      <p class="subtitle">// WELCOME ABOARD</p>
+      <h1>Cosmic Creations</h1>
     </header>
 
-    <section class="counter-panel">
-      <p class="counter-label">TOTAL CLICKS</p>
-      <div class="counter-display" id="counter">0</div>
-    </section>
+    <p class="home-tagline">Small experiments launched into the void</p>
 
-    <div class="emoji-toggle">
-      <span class="toggle-label active" id="spaceLabel">SPACE</span>
-      <label class="toggle-switch">
-        <input type="checkbox" id="emojiToggle" aria-label="Toggle between space and any emojis">
-        <span class="toggle-slider"></span>
-      </label>
-      <span class="toggle-label" id="anyLabel">ANY</span>
-    </div>
-
-    <div class="button-row">
-      <button class="launch-btn" id="launchBtn" type="button">
-        <span class="btn-glow"></span>
-        <span class="btn-text">LAUNCH</span>
-      </button>
-      <button class="reset-btn" id="resetBtn" type="button">RESET</button>
-    </div>
-
-    <p class="hint">Each click deploys an emoji into the void</p>
+    <nav class="app-list" aria-label="Apps">
+      <a class="app-card" href="click-counter.html">
+        <span class="app-card-label">APP 001</span>
+        <span class="app-card-title">Click Counter</span>
+        <span class="app-card-desc">Deploy emojis with every launch</span>
+      </a>
+      <a class="app-card" href="scientific-calculator.html">
+        <span class="app-card-label">APP 002</span>
+        <span class="app-card-title">Scientific Calculator</span>
+        <span class="app-card-desc">Crunch numbers across the cosmos</span>
+      </a>
+      <a class="app-card" href="notes.html">
+        <span class="app-card-label">APP 003</span>
+        <span class="app-card-title">Orbital Notes</span>
+        <span class="app-card-desc">Sticky notes floating in space</span>
+      </a>
+    </nav>
   </main>
 
-  <div id="emojiLayer"></div>
-
-  <script src="unicode16-emojis.js"></script>
-  <script src="space-emojis.js"></script>
-  <script src="script.js"></script>
+  <script src="stars.js"></script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbital Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png" sizes="288x291" type="image/png"/>
+  <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="favicon.png" sizes="any" type="image/png"/>
+</head>
+<body class="notes-body">
+  <canvas id="stars"></canvas>
+
+  <header class="notes-toolbar">
+    <div class="notes-toolbar-start">
+      <a class="home-link" href="index.html">← Home</a>
+      <p class="notes-toolbar-title">Orbital Notes</p>
+    </div>
+    <div class="notes-toolbar-actions">
+      <button class="notes-btn notes-btn--primary" id="addNoteBtn" type="button">+ Add Note</button>
+      <button class="notes-btn" id="importBtn" type="button">Import JSON</button>
+      <button class="notes-btn" id="exportBtn" type="button">Export JSON</button>
+    </div>
+  </header>
+
+  <div class="notes-board" id="notesBoard" aria-label="Notes workspace"></div>
+
+  <input type="file" id="importInput" accept=".json,application/json" hidden>
+
+  <script src="stars.js"></script>
+  <script src="notes.js"></script>
+</body>
+</html>

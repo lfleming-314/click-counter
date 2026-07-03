@@ -5,50 +5,8 @@ const emojiToggle = document.getElementById("emojiToggle");
 const spaceLabel = document.getElementById("spaceLabel");
 const anyLabel = document.getElementById("anyLabel");
 const emojiLayer = document.getElementById("emojiLayer");
-const starsCanvas = document.getElementById("stars");
 
 let clickCount = 0;
-
-function initStars() {
-  const ctx = starsCanvas.getContext("2d");
-  const stars = Array.from({ length: 200 }, () => ({
-    x: Math.random(),
-    y: Math.random(),
-    size: Math.random() * 2 + 0.5,
-    twinkle: Math.random() * Math.PI * 2,
-    speed: Math.random() * 0.02 + 0.005,
-  }));
-
-  function resize() {
-    starsCanvas.width = window.innerWidth;
-    starsCanvas.height = window.innerHeight;
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, starsCanvas.width, starsCanvas.height);
-
-    for (const star of stars) {
-      star.twinkle += star.speed;
-      const alpha = 0.3 + Math.sin(star.twinkle) * 0.3 + 0.4;
-      ctx.beginPath();
-      ctx.arc(
-        star.x * starsCanvas.width,
-        star.y * starsCanvas.height,
-        star.size,
-        0,
-        Math.PI * 2
-      );
-      ctx.fillStyle = `rgba(200, 230, 255, ${alpha})`;
-      ctx.fill();
-    }
-
-    requestAnimationFrame(draw);
-  }
-
-  resize();
-  draw();
-  window.addEventListener("resize", resize);
-}
 
 function randomEmoji() {
   if (emojiToggle.checked) {
@@ -63,7 +21,9 @@ function randomEmoji() {
 function updateToggleLabels() {
   spaceLabel.classList.toggle("active", !emojiToggle.checked);
   anyLabel.classList.toggle("active", emojiToggle.checked);
-}function spawnEmoji(originX, originY) {
+}
+
+function spawnEmoji(originX, originY) {
   const el = document.createElement("div");
   el.className = "flying-emoji";
   el.textContent = randomEmoji();
@@ -133,4 +93,3 @@ launchBtn.addEventListener("click", handleClick);
 resetBtn.addEventListener("click", handleReset);
 emojiToggle.addEventListener("change", updateToggleLabels);
 updateToggleLabels();
-initStars();

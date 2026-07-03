@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmic Scientific Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png" sizes="288x291" type="image/png"/>
+  <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="favicon.png" sizes="any" type="image/png"/>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <main class="container container--calc">
+    <header class="header">
+      <p class="subtitle">// NAVIGATION COMPUTER</p>
+      <h1>Scientific Calculator</h1>
+    </header>
+
+    <section class="calc-panel" aria-label="Scientific calculator">
+      <div class="calc-display">
+        <p class="calc-expression" id="calcExpression" aria-live="polite"></p>
+        <p class="calc-result" id="calcDisplay" aria-live="polite">0</p>
+      </div>
+
+      <div class="calc-mode" role="group" aria-label="Angle mode">
+        <button class="calc-mode-btn active" id="degBtn" type="button" data-mode="deg">DEG</button>
+        <button class="calc-mode-btn" id="radBtn" type="button" data-mode="rad">RAD</button>
+      </div>
+
+      <div class="calc-keys" id="calcKeys">
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="sin(">sin</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="cos(">cos</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="tan(">tan</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="log(">log</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="ln(">ln</button>
+
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="π">π</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="e">e</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="^">xʸ</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="^2">x²</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="sqrt(">√</button>
+
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="(">(</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert=")">)</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="1/(">1/x</button>
+        <button class="calc-btn calc-btn--action" type="button" data-action="clear">C</button>
+        <button class="calc-btn calc-btn--action" type="button" data-action="delete">DEL</button>
+
+        <button class="calc-btn" type="button" data-insert="7">7</button>
+        <button class="calc-btn" type="button" data-insert="8">8</button>
+        <button class="calc-btn" type="button" data-insert="9">9</button>
+        <button class="calc-btn calc-btn--op" type="button" data-insert="÷">÷</button>
+        <button class="calc-btn calc-btn--op" type="button" data-insert="×">×</button>
+
+        <button class="calc-btn" type="button" data-insert="4">4</button>
+        <button class="calc-btn" type="button" data-insert="5">5</button>
+        <button class="calc-btn" type="button" data-insert="6">6</button>
+        <button class="calc-btn calc-btn--op" type="button" data-insert="-">−</button>
+        <button class="calc-btn calc-btn--op" type="button" data-insert="+">+</button>
+
+        <button class="calc-btn" type="button" data-insert="1">1</button>
+        <button class="calc-btn" type="button" data-insert="2">2</button>
+        <button class="calc-btn" type="button" data-insert="3">3</button>
+        <button class="calc-btn calc-btn--fn" type="button" data-insert="!">n!</button>
+        <button class="calc-btn calc-btn--equals" type="button" data-action="equals">=</button>
+
+        <button class="calc-btn calc-btn--fn" type="button" data-action="negate">±</button>
+        <button class="calc-btn calc-btn--zero" type="button" data-insert="0">0</button>
+        <button class="calc-btn" type="button" data-insert=".">.</button>
+      </div>
+    </section>
+
+    <a class="home-link" href="index.html">← Back to Home</a>
+  </main>
+
+  <script src="stars.js"></script>
+  <script src="calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmic Click Counter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png" sizes="288x291" type="image/png"/>
+  <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="favicon.png" sizes="any" type="image/png"/>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <main class="container">
+    <header class="header">
+      <p class="subtitle">// MISSION CONTROL</p>
+      <h1>Cosmic Click Counter</h1>
+    </header>
+
+    <section class="counter-panel">
+      <p class="counter-label">TOTAL CLICKS</p>
+      <div class="counter-display" id="counter">0</div>
+    </section>
+
+    <div class="emoji-toggle">
+      <span class="toggle-label active" id="spaceLabel">SPACE</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="emojiToggle" aria-label="Toggle between space and any emojis">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-label" id="anyLabel">ANY</span>
+    </div>
+
+    <div class="button-row">
+      <button class="launch-btn" id="launchBtn" type="button">
+        <span class="btn-glow"></span>
+        <span class="btn-text">LAUNCH</span>
+      </button>
+      <button class="reset-btn" id="resetBtn" type="button">RESET</button>
+    </div>
+
+    <p class="hint">Each click deploys an emoji into the void</p>
+
+    <a class="home-link" href="index.html">← Back to Home</a>
+  </main>
+
+  <div id="emojiLayer"></div>
+
+  <script src="stars.js"></script>
+  <script src="unicode16-emojis.js"></script>
+  <script src="space-emojis.js"></script>
+  <script src="click-counter.js"></script>
+</body>
+</html>
